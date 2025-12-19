@@ -82,4 +82,20 @@ pip install -r requirements.txt
 - Add real-time ingestion instead of generated data.
 - Visualize reports using a simple dashboard.
 - Parameterize machines and sampling intervals.
+-- 4) Estimated downtime minutes today (based on 10s sampling)
+SELECT machine_id,
+       ROUND(COUNT(*) * 10.0 / 60.0, 1) AS est_stop_minutes
+FROM machine_events
+WHERE state='stop' AND ts::date=CURRENT_DATE
+GROUP BY machine_id
+ORDER BY est_stop_minutes DESC;
+
+-- 5) Average kW in the last 30 minutes
+SELECT machine_id,
+       ROUND(AVG(kw), 2) AS avg_kw_last_30m
+FROM energy
+WHERE ts >= NOW() - INTERVAL '30 minutes'
+GROUP BY machine_id
+ORDER BY avg_kw_last_30m DESC;
+
 
