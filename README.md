@@ -64,5 +64,22 @@ conda install -c conda-forge postgresql -y
 
 pip install -r requirements.txt
 
+## Talking points (for interview)
+- I designed a minimal PostgreSQL schema for factory telemetry.
+- Machine states are stored as time-stamped events (run / stop / fault).
+- Production data separates good parts and scrap parts.
+- Energy is sampled independently as kW values.
+- I used Python to generate realistic demo data.
+- I wrote SQL queries to produce daily operational summaries:
+  - stop counts
+  - fault counts
+  - production totals
+  - estimated downtime
+  - average energy usage
 
+## Future work
+- Calculate basic OEE metrics (Availability / Quality).
+- Add real-time ingestion instead of generated data.
+- Visualize reports using a simple dashboard.
+- Parameterize machines and sampling intervals.
 
