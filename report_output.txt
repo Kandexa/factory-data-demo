@@ -1,0 +1,21 @@
+ machine_id | stop_events_today 
+------------+-------------------
+ C          |                32
+ A          |                31
+ B          |                17
+(3 rows)
+
+ machine_id | faults_last_hour 
+------------+------------------
+ A          |                9
+ C          |                7
+ B          |                7
+(3 rows)
+
+ machine_id | good | scrap | total 
+------------+------+-------+-------
+ B          |  974 |    12 |   986
+ C          |  952 |    17 |   969
+ A          |  926 |    11 |   937
+(3 rows)
+
