@@ -1,3 +1,15 @@
+## Why this exists
+This mini-project demonstrates how factory telemetry can be stored and reported:
+- time-stamped machine states (run/stop/fault)
+- production counts (good/scrap)
+- energy sampling (kW)
+Then it generates basic operational reports using SQL.
+
+## Quick demo (2 commands)
+```bash
+python data_generator.py
+psql -U mceli -d factory365_demo -f daily_summary.sql > report_output.txt
+
 \# Factory Data Demo (PostgreSQL + Python + SQL)
 
 
